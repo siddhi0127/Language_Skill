@@ -1,0 +1,34 @@
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+        .reg_class{
+            background: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width: 300px;
+            margin-left: -34px;
+        }
+        .log_class{
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width: 300px;
+        }
+        .container {
+    display: flex;
+    flex-direction: row;      /* default, but added for clarity */
+    align-items: center;      /* vertical alignment */
+    justify-content: center;  /* horizontal alignment */
+    gap: 40px;                /* space between image and form */
+}
+
+.column img {
+    max-width: 400px;   /* adjust as needed */
+    height: 379px;
+}
