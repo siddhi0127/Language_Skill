@@ -64,18 +64,21 @@ def quiz():
         
         return render_template("quiz.html",questions=questions)
     
+    
 @app.route("/submit_test",methods=["POST"])
 def submit_test():
     conn=sqlite3.connect("users.db")
     cursor=conn.cursor()
-    
-    cursor.execute("SELECT id,answer FROM tblquestion")
-    questions = cursor.fetchall()
-    
+
+    score = 0
+    total = 0
+
     for key in request.form:
+
         if key.startswith("q"):
-            qid = key[1:]   
-            user_answer = request.form.get(key)
+            total += 1
+            qid = key[1:]
+            user_answer =request.form.get(key)
 
             cursor.execute(
                 "SELECT answer FROM tblquestion WHERE id=?",
@@ -88,7 +91,19 @@ def submit_test():
                 score += 1
 
     conn.close()
-    return render_template("result.html", score=score)
+
+    if total > 0:
+        percentage = (score / total) * 100
+    else:
+        percentage = 0
+
+
+    return render_template(
+                        "result.html", 
+                        score=score,
+                        total=total,
+                        percentage = round(percentage,2)
+                        )
 
 if __name__ == "__main__":
     app.run(debug=True)
