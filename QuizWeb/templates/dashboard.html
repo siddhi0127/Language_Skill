@@ -1,11 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Dashboard</title>
 </head>
 <body>
-    Welcome to dashboard 
+
+<h2>Welcome {{name}}</h2>
+
+<h3>Choose Domain</h3>
+
+<form action="/quiz" method="POST">
+
+<select name="domain" >
+    <option value="" disabled selected hidden> Select an Domain</option>
+    <option value="aptitude">Aptitude</option>
+    <option value="python">Python</option>
+    <option value="c">C Programming</option>
+</select>
+
+<br><br>
+
+<button type="submit">Start Quiz</button>
+
+</form>
+
+<br><br>
+
+<a href="/score">
+<button>View Score</button>
+</a>
+
+<br><br>
+
+<a href="/logout">
+<button>Logout</button>
+</a>
+
 </body>
 </html>

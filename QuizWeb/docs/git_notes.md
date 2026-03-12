@@ -24,4 +24,5 @@ Steps to operate the git
         Save a version of your changes locally.
 7. git push
         Upload changes to GitHub.
-
+8. before leaving lab:
+        git credential-manager reject https://github.com
